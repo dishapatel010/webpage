@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <script type="text/javascript">
+        window.onload = function () {
+            alert("Your video player is Here");
+        };
+        function play() {
+            var url = document.getElementById("path").value;
+            document.getElementById("show").innerHTML = '<video  id="movie" src="' + url + '" height="600px" width="1300px" controls autoplay > </video>';
+            var player = document.getElementById("movie");
+            player.load();
+        }
+    </script>
+    <body>
+        <input type="text" id="path" placeholder="put movie path" />
+        <input type="submit" onclick="play();" value="Play on" />
+        <div id="show"></div>
+    </body>
+</html>
