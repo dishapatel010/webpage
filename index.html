@@ -6,17 +6,17 @@
         <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clappr@latest/dist/clappr.min.js"></script>
         <title>Document</title>
     </head>
+   
     <body>
-        <div id="player-wrapper"></div>
+        <div id="player"></div>
         <script>
-            var playerElement = document.getElementById("player-wrapper");
-
             var player = new Clappr.Player({
                 source: "https://storage.googleapis.com/valid-scene-301602/QT5I48K4TU9/23a_1611986780_70234.mp4",
                 poster: "http://clappr.io/poster.png",
                 mute: true,
                 height: 720,
                 width: 1280,
+                parentId: "#player",
             });
         </script>
     </body>
