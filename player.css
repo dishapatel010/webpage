@@ -1,0 +1,11 @@
+.jumbotron {
+	background-color: rgba(5, 5, 5, 0.658);
+	display: flex;
+	justify-content: center;
+}
+body {
+	background-color: rgb(14, 13, 13);
+}
+#player {
+	padding: 50px auto;
+}
