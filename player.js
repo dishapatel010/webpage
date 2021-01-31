@@ -17,7 +17,11 @@ var params = getSearchParameters();
 
 var player = new Clappr.Player({
 	source: params.url,
-	poster: "http://clappr.io/poster.png",
+	poster: "https://i.imgur.com/uzKdTXG.jpg",
 	mute: true,
+	watermark: "https://raw.githubusercontent.com/code-rgb/USERGE-X/alpha/resources/ghosts.png",
+        position: 'top-left',
+        watermarkLink: "https://github.com/code-rgb/USERGE-X",
 	parentId: "#player",
+	
 });
