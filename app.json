@@ -1,0 +1,25 @@
+{
+   "name":"TOUKA19",
+   "description":"webpage",
+   "logo":"https://a-static.besthdwallpaper.com/tokyo-ghoul-re-touka-kirishima-wallpaper-9405_L.jpg",
+   "keywords":[
+      "WEBSITE",
+      "FUN",
+      "HEROKU",
+      "enjoy"
+   ],
+   "repository":"https://github.com/dishapatel010/webpage",
+   "website":"https://github.com/dishapatel010/webpage",
+   "success_url":"https://github.com/dishapatel010/webpage",
+   "buildpacks":[
+      {
+         "url":"heroku/php"
+      }
+   ],
+   "formation":{
+      "web":{
+         "quantity":1,
+         "size":"free"
+      }
+   }
+}
