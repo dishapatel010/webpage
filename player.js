@@ -1,6 +1,4 @@
-const queryString = window.location.search;
-const urlParams = new URLSearchParams(queryString);
-const video_link = urlParams.get("url");
+const video_link = window.location.search.substr(1).split("url=")[1];
 const player = new Plyr("#player");
 
 function change_src() {
@@ -9,7 +7,7 @@ function change_src() {
 		title: "Example title",
 		sources: [
 			{
-				src: atob(video_link),
+				src: video_link,
 				type: "video/mp4",
 				//   size: 720
 			},
