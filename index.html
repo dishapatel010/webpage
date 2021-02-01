@@ -3,7 +3,6 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<!-- CSS only -->
 		<!-- Bootstrap CSS -->
 		<link
 			href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
@@ -11,12 +10,10 @@
 			integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
 			crossorigin="anonymous"
 		/>
-
 		<!-- plyr CSS -->
 		<link rel="stylesheet" href="https://cdn.plyr.io/3.6.4/plyr.css" />
 		<!-- Custom CSS -->
 		<link rel="stylesheet" href="player.css" />
-
 		<title>Player</title>
 	</head>
 	<body>
@@ -56,6 +53,14 @@
 				</div>
 			</div>
 		</nav>
+		<div class="container-md">
+			<video id="player" controls crossorigin playsinline>
+				<source
+					src="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-576p.mp4"
+					type="video/mp4"
+				/>
+			</video>
+		</div>
 		<div
 			class="position-fixed py-2 px-3 bg-dark text-white rounded-pill"
 			style="bottom: 1rem; left: 1rem"
@@ -65,15 +70,6 @@
 				<label id="darkModeLabel" for="darkMode">Light</label>
 			</div>
 		</div>
-		<div class="container">
-			<video id="player" controls crossorigin playsinline>
-				<source
-					src="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-576p.mp4"
-					type="video/mp4"
-				/>
-			</video>
-		</div>
-
 		<!-- JQuery -->
 		<script
 			src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
@@ -86,10 +82,9 @@
 			integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
 			crossorigin="anonymous"
 		></script>
-		<!-- plyr -->
+		<!-- plyr JavaScript -->
 		<script src="https://cdn.plyr.io/3.6.4/plyr.js"></script>
 		<!-- Custom JavaScript -->
 		<script src="player.js"></script>
 	</body>
 </html>
-<!-- https://storage.googleapis.com/tribal-sign-302203/MIA7TE51JSBS/22a_1612005883_2234.mp4 -->

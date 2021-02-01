@@ -1,27 +1,30 @@
-function getSearchParameters() {
-	var prmstr = window.location.search.substr(1);
-	return prmstr != null && prmstr != "" ? transformToAssocArray(prmstr) : {};
-}
-
-function transformToAssocArray(prmstr) {
-	var params = {};
-	var prmarr = prmstr.split("&");
-	for (var i = 0; i < prmarr.length; i++) {
-		var tmparr = prmarr[i].split("=");
-		params[tmparr[0]] = tmparr[1];
-	}
-	return params;
-}
-
-var params = getSearchParameters();
+const video_link = window.location.search.substr(1).split("url=")[1];
 const player = new Plyr("#player");
 
+function change_src() {
+	player.source = {
+		type: "video",
+		title: "Example title",
+		sources: [
+			{
+				src: video_link,
+				type: "video/mp4",
+				//   size: 720
+			},
+		],
+		// poster: poster
+	};
+
+	player.play();
+}
+if (video_link) {
+	change_src();
+}
 //  ------------------Theme Toggle------------------
 var darkMode = document.getElementById("darkMode");
 var darkLabel = "darkModeLabel";
 var darkLang = "Dark";
 var lightLang = "Light";
-var imgID = "logo";
 
 window.addEventListener("load", function () {
 	if (darkMode) {
@@ -43,19 +46,34 @@ function initTheme() {
 	darkThemeSelected
 		? (document.getElementById(darkLabel).innerHTML = darkLang)
 		: (document.getElementById(darkLabel).innerHTML = lightLang);
+	resetTheme();
 }
 
 function resetTheme() {
 	if (darkMode.checked) {
 		document.body.setAttribute("data-theme", "dark");
 		localStorage.setItem("darkMode", "dark");
-		document.getElementById(imgID).src = darkImg;
 		document.getElementById(darkLabel).innerHTML = darkLang;
+		$("body").css("background-color", "#222222");
+
+		$("body > nav > div > a").css("color", "#620afa");
+		$("body > nav")
+			.removeClass("navbar-light bg-light")
+			.addClass("navbar-dark bg-dark");
+		// #hex to Filter https://codepen.io/sosuke/pen/Pjoqqp
+		$("img").css(
+			"filter",
+			"invert(10%) sepia(100%) saturate(7114%) hue-rotate(267deg) brightness(94%) contrast(109%)"
+		);
 	} else {
 		document.body.removeAttribute("data-theme");
 		localStorage.removeItem("darkMode");
-		document.getElementById(imgID).src = lightImg;
 		document.getElementById(darkLabel).innerHTML = lightLang;
+		$("body").css("background-color", "white");
+		$("body > nav")
+			.removeClass("navbar-dark bg-dark")
+			.addClass("navbar-light bg-light");
+		$("img").css("filter", "");
 	}
 }
 //  ----------------------------------------------
